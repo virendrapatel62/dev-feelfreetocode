@@ -1,0 +1,21 @@
+.product {
+    max-width: 50vw;
+    display: grid;
+    margin: auto;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid rgb(178, 181, 184);
+    padding: 10px;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+
+}
+
+.product div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,48 @@
+{% extends "layout/layout.html" %}
+
+{%block title%} Shop {%endblock%}
+
+{% block content %}
+
+<style>
+    main {
+        max-width: 1100px;
+        margin: auto;
+    }
+
+
+    .products {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .product img {
+        width: 100%;
+        aspect-ratio: 2/3;
+        height: auto;
+        object-fit: contain;
+        border: 1px solid rgb(202, 197, 197);
+        border-radius: 16px;
+        cursor: pointer;
+        transition: all 500ms;
+    }
+
+    .product img:hover {
+        transform: scale(1.1);
+    }
+</style>
+
+
+<div class="products">
+    {% for product in products %}
+    <a href="/product/{{product.id}}" class="product">
+        <img src="{{product.thumbnail.url}}" alt="">
+        <h3>{{product.name}}</h3>
+        <h2>
+            ₹ {{product.price}}
+        </h2>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}
